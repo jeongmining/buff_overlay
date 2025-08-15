@@ -271,8 +271,6 @@ namespace BuffOverlay
             {
                 case Native.WM_NCHITTEST:
                     {
-                        handled = true;
-
                         var mp = WF.Control.MousePosition;
                         var pt = this.PointFromScreen(new Point(mp.X, mp.Y));
                         int w = (int)this.ActualWidth, h = (int)this.ActualHeight;
@@ -282,17 +280,17 @@ namespace BuffOverlay
                         bool top = pt.Y <= GRIP_SIZE;
                         bool bottom = pt.Y >= h - GRIP_SIZE;
 
-                        if (left && top) return (IntPtr)Native.HTTOPLEFT;
-                        if (right && top) return (IntPtr)Native.HTTOPRIGHT;
-                        if (left && bottom) return (IntPtr)Native.HTBOTTOMLEFT;
-                        if (right && bottom) return (IntPtr)Native.HTBOTTOMRIGHT;
-                        if (left) return (IntPtr)Native.HTLEFT;
-                        if (right) return (IntPtr)Native.HTRIGHT;
-                        if (top) return (IntPtr)Native.HTTOP;
-                        if (bottom) return (IntPtr)Native.HTBOTTOM;
+                        if (left && top) { handled = true; return (IntPtr)Native.HTTOPLEFT; }
+                        if (right && top) { handled = true; return (IntPtr)Native.HTTOPRIGHT; }
+                        if (left && bottom) { handled = true; return (IntPtr)Native.HTBOTTOMLEFT; }
+                        if (right && bottom) { handled = true; return (IntPtr)Native.HTBOTTOMRIGHT; }
+                        if (left) { handled = true; return (IntPtr)Native.HTLEFT; }
+                        if (right) { handled = true; return (IntPtr)Native.HTRIGHT; }
+                        if (top) { handled = true; return (IntPtr)Native.HTTOP; }
+                        if (bottom) { handled = true; return (IntPtr)Native.HTBOTTOM; }
 
-                        // 중앙: 어디서나 드래그 이동
-                        return (IntPtr)Native.HTCAPTION;
+                        handled = false;
+                        return IntPtr.Zero;
                     }
                 case Native.WM_ENTERSIZEMOVE:
                     _startSizingRect = GetWindowRect();
