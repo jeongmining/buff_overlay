@@ -3,10 +3,10 @@
 선택한 화면 영역을 Always-on-top, 투명 오버레이 창에 실시간 미러링해 보여주는 도구.
 재획하면서 넷플릭스 볼 때 버프 남은 시간 / 쿨타임 크게 띄워두고 편안한 모니터링 가능
 
-# 다운로드
+## 다운로드
 [BuffOverlay v1.0.zip](https://github.com/user-attachments/files/21803045/BuffOverlay.v1.0.zip)
 
-# 단축키
+## 단축키
 
 R : 영역 선택 시작/확정
 
@@ -18,7 +18,7 @@ Esc : 종료
 
 \* 위치 및 크기 조정 가능
 
-# 사용 예
+## 사용 예
 
 <img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/e6cf33cf-ab6d-4096-9ddd-d4d795fc9329" />
 
@@ -35,6 +35,6 @@ R키를 눌러 원하는 부분에 영역 지정을 하고 다시 R키를 누른
 
 
 
-# 라이선스
+## 라이선스
 
 MIT
